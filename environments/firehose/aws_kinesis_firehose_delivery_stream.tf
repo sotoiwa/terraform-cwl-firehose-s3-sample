@@ -22,11 +22,6 @@ resource "aws_kinesis_firehose_delivery_stream" "cwl_to_s3" {
           parameter_name  = "LambdaArn"
           parameter_value = "${aws_lambda_function.logs_prosessor.arn}:$LATEST"
         }
-
-        parameters {
-          parameter_name  = "BufferSizeInMBs"
-          parameter_value = "1"
-        }
       }
     }
 
